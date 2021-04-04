@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="card mb-3 col-4" *ngFor="let x of storedNames">
+    
+        <img class="card-img-top" src="{{x.imgpath}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{x.title}}</h5>
+          <p class="card-text overview">{{x.overview}}</p>
+          <p class="card-text"><small class="text-muted">{{x.count}} Views</small></p>
+        </div>
+    </div>
+
+</div>

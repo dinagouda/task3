@@ -1,0 +1,54 @@
+<div *ngIf="favvar"  >
+<button (click)="logout()" >log out</button>
+<button (click)="allFavMovies()"  routerLink="/fav">All Fav Movies</button>
+
+<h3>What's Popular On TV</h3>
+<div class="container">
+ 
+    <div class="card mb-3 col-4" *ngFor="let x of resultpopularmovie.results">
+      <button  attr.data-title="{{x.original_title}}" attr.data-overview="{{x.original_title}}" attr.data-imgpath="https://www.themoviedb.org/t/p/w220_and_h330_face{{x.poster_path}}" attr.data-count="{{x.vote_count}}"  (click)="fav($event)">Add to Fovorite</button>
+        <img class="card-img-top" src="https://www.themoviedb.org/t/p/w220_and_h330_face{{x.poster_path}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{x.original_title}}</h5>
+          <p class="card-text overview">{{x.overview}}</p>
+          <p class="card-text"><small class="text-muted">{{x.vote_count}} Views</small></p>
+        </div>
+    </div>
+ 
+  </div>
+
+
+  <h3>Top Rated</h3>
+<div class="container"> 
+  
+ 
+    <div class="card mb-3 col-4" *ngFor="let x of resultToprated.results">
+      <button>Add to Fovorite</button>
+        <img class="card-img-top" src="https://www.themoviedb.org/t/p/w220_and_h330_face{{x.poster_path}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{x.original_title}}</h5>
+          <p class="card-text overview">{{x.overview}}</p>
+          <p class="card-text"><small class="text-muted">{{x.vote_count}} Views</small></p>
+        </div>
+    </div>
+ 
+  </div>
+
+
+  <h3>Now Playing</h3>
+  <div class="container">
+   
+      <div class="card mb-3 col-4" *ngFor="let x of resultNowplaying.results">
+        <button>Add to Fovorite</button>
+          <img class="card-img-top" src="https://www.themoviedb.org/t/p/w220_and_h330_face{{x.poster_path}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{x.original_title}}</h5>
+            <p class="card-text overview">{{x.overview}}</p>
+            <p class="card-text"><small class="text-muted">{{x.vote_count}} Views</small></p>
+          </div>
+      </div>
+   
+    </div>
+  </div>
+
+  <app-favorites *ngIf="!favvar"  ></app-favorites>

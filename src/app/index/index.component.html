@@ -1,0 +1,27 @@
+
+<div class="form-modal">
+    
+    <div class="form-toggle">
+        <button id="login-toggle" (click)="toggleLogin()">log in</button>
+        <button id="signup-toggle" (click)="toggleSignup()">sign up</button>
+    </div>
+  
+    <div id="login-form" >
+        <form>
+            <input type="text" placeholder="Enter email "  #email/>
+            <input type="password" placeholder="Enter password"  #password />
+            <button type="button" (click)="onSignin(email.value , password.value)" class="btn login">login</button>
+          
+        </form>
+    </div>
+  
+    <div id="signup-form"  >
+        <form>
+            <input type="email"  placeholder="Enter your email" #emailSignup />
+            <input type="password" placeholder="Create password"  #passwordSignup/>
+            <button type="button" (click)="onSignup(emailSignup.value , passwordSignup.value)" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account  </button> 
+            
+        </form>
+    </div>
+  
+  </div>
